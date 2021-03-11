@@ -43,7 +43,7 @@
 
 
   
-    <link rel="canonical" href="https://jerry042.github.io/blog/post/docker-en-debian/">
+    <link rel="canonical" href="https://jerry042.github.io/blog.github.io/post/docker-en-debian/">
   
 
 
@@ -56,7 +56,7 @@
 <meta property="og:site_name" content="Com crear el vostre servidor de correus en poste.io">
 <meta property="og:title" content="DOCKER EN DEBIAN">
 
-  <meta property="og:url" content="https://jerry042.github.io/blog/post/docker-en-debian/">
+  <meta property="og:url" content="https://jerry042.github.io/blog.github.io/post/docker-en-debian/">
 
 
 
@@ -121,12 +121,12 @@
       "@type": "Article",
       "mainEntityOfPage": {
         "@type": "WebSite",
-        "@id": "https:\/\/jerry042.github.io\/blog\/"
+        "@id": "https:\/\/jerry042.github.io\/blog.github.io\/"
       },
       "headline": "DOCKER EN DEBIAN",
       "description": "",
       
-      "url": "https:\/\/jerry042.github.io\/blog\/post\/docker-en-debian\/",
+      "url": "https:\/\/jerry042.github.io\/blog.github.io\/post\/docker-en-debian\/",
       "inLanguage": "en",
       "datePublished": "2021-03-09",
       "dateModified": "2021-03-09",
@@ -149,7 +149,7 @@
 
 
 
-<link rel="stylesheet" href="/blog/css/main.min.css">
+<link rel="stylesheet" href="/blog.github.io/css/main.min.css">
 
 
 
@@ -182,21 +182,21 @@
 
 
 
-  <link rel="preload" href="/blog/fonts/open-sans-v17-latin-700.woff" as="font" crossorigin="anonymous">
+  <link rel="preload" href="/blog.github.io/fonts/open-sans-v17-latin-700.woff" as="font" crossorigin="anonymous">
 
-  <link rel="preload" href="/blog/fonts/open-sans-v17-latin-700.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="/blog.github.io/fonts/open-sans-v17-latin-700.woff2" as="font" crossorigin="anonymous">
 
-  <link rel="preload" href="/blog/fonts/open-sans-v17-latin-italic.woff" as="font" crossorigin="anonymous">
+  <link rel="preload" href="/blog.github.io/fonts/open-sans-v17-latin-italic.woff" as="font" crossorigin="anonymous">
 
-  <link rel="preload" href="/blog/fonts/open-sans-v17-latin-italic.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="/blog.github.io/fonts/open-sans-v17-latin-italic.woff2" as="font" crossorigin="anonymous">
 
-  <link rel="preload" href="/blog/fonts/open-sans-v17-latin-regular.woff" as="font" crossorigin="anonymous">
+  <link rel="preload" href="/blog.github.io/fonts/open-sans-v17-latin-regular.woff" as="font" crossorigin="anonymous">
 
-  <link rel="preload" href="/blog/fonts/open-sans-v17-latin-regular.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="/blog.github.io/fonts/open-sans-v17-latin-regular.woff2" as="font" crossorigin="anonymous">
 
-  <link rel="preload" href="/blog/fonts/oswald-v29-latin-700.woff" as="font" crossorigin="anonymous">
+  <link rel="preload" href="/blog.github.io/fonts/oswald-v29-latin-700.woff" as="font" crossorigin="anonymous">
 
-  <link rel="preload" href="/blog/fonts/oswald-v29-latin-700.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="/blog.github.io/fonts/oswald-v29-latin-700.woff2" as="font" crossorigin="anonymous">
 
 
 
@@ -413,7 +413,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <header>
       
 
-  <a href="/blog">Com crear el vostre servidor de correus en poste.io</a>
+  <a href="/blog.github.io">Com crear el vostre servidor de correus en poste.io</a>
 
 
 
@@ -488,10 +488,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <p>Com podem posar el Docker en un sistema debian?</p>
 <p>1)Hem de esborrar qualsevol rastre anterior (per si de cas):</p>
-<p>sudo apt-get purge docker lxc-docker docker-engine docker.io</p>
+<p><em><strong>sudo apt-get purge docker lxc-docker docker-engine docker.io</strong></em></p>
 <p>2)Despres hem de fer un update (pot ser triga molt):</p>
-<p>sudo apt-get update</p>
-<p>
+<p><em><strong>sudo apt-get update</strong></em>
+
 
 
 
@@ -511,27 +511,216 @@ document.addEventListener('DOMContentLoaded', function () {
     <img
       
       loading="lazy"
-      src="/Imatges/docker-debian-ex2.jpg"
-      alt="Cat"
+      src="https://i.imgur.com/2cZdbhk.png"
+      
     />
 
   
 
 </p>
 <p>3)Hem de descarregar les seguents dependencies,al fer-lo ens permetrá afegir un nou repositori a través de HTTPS:</p>
-<p>sudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common</p>
+<p><em><strong>sudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common</strong></em>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="https://i.imgur.com/6q02VGi.png"
+      
+    />
+
+  
+
+</p>
 <p>4)Descarreguen la clau GPG oficial de Docker per verificar la integritat dels paquest abans d&rsquo;instalar:</p>
-<p>curl -fsSL <a href="https://download.docker.com/linux/debian/gpg">https://download.docker.com/linux/debian/gpg</a> | sudo apt-key add -</p>
+<p><em><strong>curl -fsSL <a href="https://download.docker.com/linux/debian/gpg">https://download.docker.com/linux/debian/gpg</a> | sudo apt-key add -</strong></em>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="https://i.imgur.com/xnePDD3.png"
+      
+    />
+
+  
+
+</p>
 <p>5)Baixen el repositori de github al nostre equip:</p>
-<p>sudo add-apt-repository &ldquo;deb [arch=amd64] <a href="https://download.docker.com/linux/debian">https://download.docker.com/linux/debian</a> buster stable&rdquo;</p>
+<p><em><strong>sudo add-apt-repository &ldquo;deb [arch=amd64] <a href="https://download.docker.com/linux/debian">https://download.docker.com/linux/debian</a> buster stable&rdquo;</strong></em>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="https://i.imgur.com/eSCjmQP.png"
+      
+    />
+
+  
+
+</p>
 <p>6)Actualitzem l&rsquo;equip:</p>
-<p>sudo apt-get update</p>
+<p><em><strong>sudo apt-get update</strong></em>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="https://i.imgur.com/qkGvZYA.png"
+      
+    />
+
+  
+
+</p>
 <p>7)Instalem l&rsquo;ultima versió del Docker i el contrainerd:</p>
-<p>sudo apt-get install docker-ce docker-ce-cli containerd.io</p>
+<p><em><strong>sudo apt-get install docker-ce docker-ce-cli containerd.io</strong></em>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="https://i.imgur.com/ejMI6cm.png"
+      
+    />
+
+  
+
+</p>
 <p>8)El servei s&rsquo;iniciará automaticament després de l&rsquo;instalació i ho podem comprobar amb la comanda:</p>
-<p>sudo systemctl status docker</p>
+<p><em><strong>sudo systemctl status docker</strong></em>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="https://i.imgur.com/msmPJP6.png"
+      
+    />
+
+  
+
+</p>
 <p>9)També podem veure la versió del docker amb la seguent comanda:</p>
-<p>docker -v</p>
+<p><em><strong>docker -v</strong></em>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="https://i.imgur.com/LCHzNP9.png"
+      
+    />
+
+  
+
+</p>
 
 
 

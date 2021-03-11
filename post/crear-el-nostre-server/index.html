@@ -43,7 +43,7 @@
 
 
   
-    <link rel="canonical" href="https://jerry042.github.io/blog/post/crear-el-nostre-server/">
+    <link rel="canonical" href="https://jerry042.github.io/blog.github.io/post/crear-el-nostre-server/">
   
 
 
@@ -56,7 +56,7 @@
 <meta property="og:site_name" content="Com crear el vostre servidor de correus en poste.io">
 <meta property="og:title" content="CREAR EL NOSTRE SERVER">
 
-  <meta property="og:url" content="https://jerry042.github.io/blog/post/crear-el-nostre-server/">
+  <meta property="og:url" content="https://jerry042.github.io/blog.github.io/post/crear-el-nostre-server/">
 
 
 
@@ -121,12 +121,12 @@
       "@type": "Article",
       "mainEntityOfPage": {
         "@type": "WebSite",
-        "@id": "https:\/\/jerry042.github.io\/blog\/"
+        "@id": "https:\/\/jerry042.github.io\/blog.github.io\/"
       },
       "headline": "CREAR EL NOSTRE SERVER",
       "description": "",
       
-      "url": "https:\/\/jerry042.github.io\/blog\/post\/crear-el-nostre-server\/",
+      "url": "https:\/\/jerry042.github.io\/blog.github.io\/post\/crear-el-nostre-server\/",
       "inLanguage": "en",
       "datePublished": "2021-03-08",
       "dateModified": "2021-03-08",
@@ -149,7 +149,7 @@
 
 
 
-<link rel="stylesheet" href="/blog/css/main.min.css">
+<link rel="stylesheet" href="/blog.github.io/css/main.min.css">
 
 
 
@@ -182,21 +182,21 @@
 
 
 
-  <link rel="preload" href="/blog/fonts/open-sans-v17-latin-700.woff" as="font" crossorigin="anonymous">
+  <link rel="preload" href="/blog.github.io/fonts/open-sans-v17-latin-700.woff" as="font" crossorigin="anonymous">
 
-  <link rel="preload" href="/blog/fonts/open-sans-v17-latin-700.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="/blog.github.io/fonts/open-sans-v17-latin-700.woff2" as="font" crossorigin="anonymous">
 
-  <link rel="preload" href="/blog/fonts/open-sans-v17-latin-italic.woff" as="font" crossorigin="anonymous">
+  <link rel="preload" href="/blog.github.io/fonts/open-sans-v17-latin-italic.woff" as="font" crossorigin="anonymous">
 
-  <link rel="preload" href="/blog/fonts/open-sans-v17-latin-italic.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="/blog.github.io/fonts/open-sans-v17-latin-italic.woff2" as="font" crossorigin="anonymous">
 
-  <link rel="preload" href="/blog/fonts/open-sans-v17-latin-regular.woff" as="font" crossorigin="anonymous">
+  <link rel="preload" href="/blog.github.io/fonts/open-sans-v17-latin-regular.woff" as="font" crossorigin="anonymous">
 
-  <link rel="preload" href="/blog/fonts/open-sans-v17-latin-regular.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="/blog.github.io/fonts/open-sans-v17-latin-regular.woff2" as="font" crossorigin="anonymous">
 
-  <link rel="preload" href="/blog/fonts/oswald-v29-latin-700.woff" as="font" crossorigin="anonymous">
+  <link rel="preload" href="/blog.github.io/fonts/oswald-v29-latin-700.woff" as="font" crossorigin="anonymous">
 
-  <link rel="preload" href="/blog/fonts/oswald-v29-latin-700.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="/blog.github.io/fonts/oswald-v29-latin-700.woff2" as="font" crossorigin="anonymous">
 
 
 
@@ -413,7 +413,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <header>
       
 
-  <a href="/blog">Com crear el vostre servidor de correus en poste.io</a>
+  <a href="/blog.github.io">Com crear el vostre servidor de correus en poste.io</a>
 
 
 
@@ -488,15 +488,123 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <p>Una vegada ja instalat el Docker ara anem a crear el nostre servidor per posar el poste.io</p>
 <p>1)Creem un volum</p>
-<p>docker volume create volum_server</p>
+<p><em><strong>docker volume create volum_server</strong></em>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="https://i.imgur.com/TNUMFGK.png"
+      
+    />
+
+  
+
+</p>
 <p>On volum_server es el nom que li he posat al volum!!</p>
 <p>2)Hem de engegar el docker</p>
-<p>docker run -p 443:443 -e TZ=Europe/Andorra -v &ldquo;volum_mail_server&rdquo;:/data &ndash;name volum_server -h &ldquo;jerryflores.io&rdquo; -t analogic/poste.io</p>
+<p><em><strong>docker run -p 443:443 -e TZ=Europe/Andorra -v &ldquo;volum_mail_server&rdquo;:/data &ndash;name volum_server -h &ldquo;jerryflores.io&rdquo; -t analogic/poste.io</strong></em>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="https://i.imgur.com/74F913N.png"
+      
+    />
+
+  
+
+</p>
 <p>Li dien que utilitzi el port 443 que es de https, que la franja horaria estigui en Andorra, que utilitzi el nostre volum que hem creat abans i també li indiquen el nostre domini que sera &ldquo;jerryflores.io&rdquo;</p>
 <p>3)Hem de posar en marxa el container amb la suguent comanda</p>
-<p>docker start volum_server</p>
+<p><em><strong>docker start volum_server</strong></em>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="https://i.imgur.com/Ou8gk7T.png"
+      
+    />
+
+  
+
+</p>
 <p>4)Ho comprovarem amb la seguent comanda</p>
-<p>sudo systemctl status docker</p>
+<p><em><strong>sudo systemctl status docker</strong></em>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="https://i.imgur.com/viA4cTi.png"
+      
+    />
+
+  
+
+</p>
 
 
 
