@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Com crear el vostre servidor de correus en poste.io</title>
+    <link>https://jerry042.github.io/blog/</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 10 Mar 2021 16:17:42 +0100</lastBuildDate><atom:link href="https://jerry042.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+      <item>
+        <title>INTRODUCCIÓ</title>
+        <link>https://jerry042.github.io/blog/post/introducci%C3%B3/</link>
+        <pubDate>Wed, 10 Mar 2021 16:17:42 +0100</pubDate>
+        
+        <guid>https://jerry042.github.io/blog/post/introducci%C3%B3/</guid>
+        <description>En aquest petit blog os explicaré com posar el Docker en un equip Debian i crear un domini i correus electronics amb poste.io que et permet crear i enviar missatges entre comptes de correus.</description>
+      </item>
+    
+      <item>
+        <title>DOCKER EN DEBIAN</title>
+        <link>https://jerry042.github.io/blog/post/docker-en-debian/</link>
+        <pubDate>Tue, 09 Mar 2021 16:25:00 +0100</pubDate>
+        
+        <guid>https://jerry042.github.io/blog/post/docker-en-debian/</guid>
+        <description>Com podem posar el Docker en un sistema debian?
+1)Hem de esborrar qualsevol rastre anterior (per si de cas):
+sudo apt-get purge docker lxc-docker docker-engine docker.io
+2)Despres hem de fer un update (pot ser triga molt):
+sudo apt-get update
+ 3)Hem de descarregar les seguents dependencies,al fer-lo ens permetrá afegir un nou repositori a través de HTTPS:
+sudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common
+4)Descarreguen la clau GPG oficial de Docker per verificar la integritat dels paquest abans d&amp;rsquo;instalar:</description>
+      </item>
+    
+      <item>
+        <title>CREAR EL NOSTRE SERVER</title>
+        <link>https://jerry042.github.io/blog/post/crear-el-nostre-server/</link>
+        <pubDate>Mon, 08 Mar 2021 16:54:51 +0100</pubDate>
+        
+        <guid>https://jerry042.github.io/blog/post/crear-el-nostre-server/</guid>
+        <description>Una vegada ja instalat el Docker ara anem a crear el nostre servidor per posar el poste.io
+1)Creem un volum
+docker volume create volum_server
+On volum_server es el nom que li he posat al volum!!
+2)Hem de engegar el docker
+docker run -p 443:443 -e TZ=Europe/Andorra -v &amp;ldquo;volum_mail_server&amp;rdquo;:/data &amp;ndash;name volum_server -h &amp;ldquo;jerryflores.io&amp;rdquo; -t analogic/poste.io
+Li dien que utilitzi el port 443 que es de https, que la franja horaria estigui en Andorra, que utilitzi el nostre volum que hem creat abans i també li indiquen el nostre domini que sera &amp;ldquo;jerryflores.</description>
+      </item>
+    
+      <item>
+        <title>COM CREAR UN DOMINI</title>
+        <link>https://jerry042.github.io/blog/post/com-crear-un-domini/</link>
+        <pubDate>Sun, 07 Mar 2021 16:49:03 +0100</pubDate>
+        
+        <guid>https://jerry042.github.io/blog/post/com-crear-un-domini/</guid>
+        <description>En aquesta part os explicaré com fer els dominis del poste.io
+1)Primer de tot has d&amp;rsquo;anar al teu navegador i posar la seguent URL
+https://&amp;ldquo;la-teva-ip-sense-les-comilles&amp;rdquo;
+2)Et posará que no es segur el lloc, aixo es perque no tens un certificat dones a Advance i despres acceptes el risc
+3)Després et sortirá el teu first poste.io, has de posar un compte administrador, ja sigui admin o el teu nom i el domini que havies creat, en el meu cas jerryflores.</description>
+      </item>
+    
+      <item>
+        <title>COM CREAR COMPTES DE CORREU AMB POSTE.IO</title>
+        <link>https://jerry042.github.io/blog/post/correus/</link>
+        <pubDate>Sat, 06 Mar 2021 16:31:55 +0100</pubDate>
+        
+        <guid>https://jerry042.github.io/blog/post/correus/</guid>
+        <description>Per anar a la part de crear els comptes d&amp;rsquo;usuaris hem d&amp;rsquo;anar a Emails account
+1)Hem de donar click al botó de create a new mail
+2)Podem posar el nom del correu, per exemple joan i podem posar un dels dos dominis que hem creat
+3)Si vols entrar al teu compte de correu pots entrar amb la seguent comanda
+https://&amp;ldquo;la-teva-ip-sense-cometes&amp;rdquo;/webmail</description>
+      </item>
+    
+  </channel>
+</rss>
