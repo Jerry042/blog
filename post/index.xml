@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Com crear el vostre servidor de correus en poste.io</title>
+    <link>https://jerry042.github.io/blog.github.io/post/</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 10 Mar 2021 16:17:42 +0100</lastBuildDate><atom:link href="https://jerry042.github.io/blog.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+      <item>
+        <title>INTRODUCCIÓ</title>
+        <link>https://jerry042.github.io/blog.github.io/post/introducci%C3%B3/</link>
+        <pubDate>Wed, 10 Mar 2021 16:17:42 +0100</pubDate>
+        
+        <guid>https://jerry042.github.io/blog.github.io/post/introducci%C3%B3/</guid>
+        <description>En aquest petit blog os explicaré com posar el Docker en un equip Debian i crear un domini i correus electronics amb poste.io que et permet crear i enviar missatges entre comptes de correus.</description>
+      </item>
+    
+      <item>
+        <title>DOCKER EN DEBIAN</title>
+        <link>https://jerry042.github.io/blog.github.io/post/docker-en-debian/</link>
+        <pubDate>Tue, 09 Mar 2021 16:25:00 +0100</pubDate>
+        
+        <guid>https://jerry042.github.io/blog.github.io/post/docker-en-debian/</guid>
+        <description>Com podem posar el Docker en un sistema debian?
+1)Hem de esborrar qualsevol rastre anterior (per si de cas):
+sudo apt-get purge docker lxc-docker docker-engine docker.io
+2)Despres hem de fer un update (pot ser triga molt):
+sudo apt-get update 3)Hem de descarregar les seguents dependencies,al fer-lo ens permetrá afegir un nou repositori a través de HTTPS:
+sudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common 4)Descarreguen la clau GPG oficial de Docker per verificar la integritat dels paquest abans d&amp;rsquo;instalar:</description>
+      </item>
+    
+      <item>
+        <title>CREAR EL NOSTRE SERVER</title>
+        <link>https://jerry042.github.io/blog.github.io/post/crear-el-nostre-server/</link>
+        <pubDate>Mon, 08 Mar 2021 16:54:51 +0100</pubDate>
+        
+        <guid>https://jerry042.github.io/blog.github.io/post/crear-el-nostre-server/</guid>
+        <description>Una vegada ja instalat el Docker ara anem a crear el nostre servidor per posar el poste.io
+1)Creem un volum
+docker volume create volum_server On volum_server es el nom que li he posat al volum!!
+2)Hem de engegar el docker
+docker run -p 443:443 -e TZ=Europe/Andorra -v &amp;ldquo;volum_mail_server&amp;rdquo;:/data &amp;ndash;name volum_server -h &amp;ldquo;jerryflores.io&amp;rdquo; -t analogic/poste.io Li dien que utilitzi el port 443 que es de https, que la franja horaria estigui en Andorra, que utilitzi el nostre volum que hem creat abans i també li indiquen el nostre domini que sera &amp;ldquo;jerryflores.</description>
+      </item>
+    
+      <item>
+        <title>COM CREAR UN DOMINI</title>
+        <link>https://jerry042.github.io/blog.github.io/post/com-crear-un-domini/</link>
+        <pubDate>Sun, 07 Mar 2021 16:49:03 +0100</pubDate>
+        
+        <guid>https://jerry042.github.io/blog.github.io/post/com-crear-un-domini/</guid>
+        <description>En aquesta part os explicaré com fer els dominis del poste.io
+1)Primer de tot has d&amp;rsquo;anar al teu navegador i posar la seguent URL
+https://&amp;ldquo;la-teva-ip-sense-cometes&amp;rdquo;
+2)Et posará que no es segur el lloc, aixo es perque no tens un certificat dones a Advance i despres acceptes el risc 3)Després et sortirá el teu first poste.io, has de posar un compte administrador, ja sigui admin o el teu nom i el domini que havies creat, en el meu cas jerryflores.</description>
+      </item>
+    
+      <item>
+        <title>COM CREAR COMPTES DE CORREU AMB POSTE.IO</title>
+        <link>https://jerry042.github.io/blog.github.io/post/correus/</link>
+        <pubDate>Sat, 06 Mar 2021 16:31:55 +0100</pubDate>
+        
+        <guid>https://jerry042.github.io/blog.github.io/post/correus/</guid>
+        <description>Per anar a la part de crear els comptes d&amp;rsquo;usuaris hem d&amp;rsquo;anar a Emails account
+1)Hem de donar click al botó de create a new mail 2)Podem posar el nom del correu, per exemple joan i podem posar un dels dos dominis que hem creat 3)Si vols entrar al teu compte de correu pots entrar posant aquesta URL en el navegador
+https://&amp;ldquo;la-teva-ip-sense-cometes&amp;rdquo;/webmail
+4)Si vols crear un usuari amb comandes, també ho pots fer, amb curl.</description>
+      </item>
+    
+      <item>
+        <title>ELIMINACIÓ DE COMPTES DE CORREU</title>
+        <link>https://jerry042.github.io/blog.github.io/post/eliminaci%C3%B3-de-correu/</link>
+        <pubDate>Fri, 05 Mar 2021 11:54:38 +0100</pubDate>
+        
+        <guid>https://jerry042.github.io/blog.github.io/post/eliminaci%C3%B3-de-correu/</guid>
+        <description>Com puc eliminar el meu compte de correu? Facil!!
+1)Has d&amp;rsquo;anar a Emails accounts i fer click en el usuari que vols suprimir 2)Baixas fins al fons i veuras un botó vermell on pots suprimir el teu compte 5)També pots suprimir el compte amb curl, amb aquesta comanda
+curl -v -k -u admin@jerryflores.io:AcademiaFom04 -X &amp;ldquo;DELETE&amp;rdquo; https://10.5.2.15/admin/api/v1/boxes/albert@dominiambcurl.io
+Abans Executent la comanda Després </description>
+      </item>
+    
+      <item>
+        <title>INTERCANVIAR MISSATGES</title>
+        <link>https://jerry042.github.io/blog.github.io/post/intercamviar-missatges/</link>
+        <pubDate>Thu, 04 Mar 2021 15:06:17 +0100</pubDate>
+        
+        <guid>https://jerry042.github.io/blog.github.io/post/intercamviar-missatges/</guid>
+        <description>Ara intentarem intercamviar missatges entre dos comptes creats
+1)Primer de tot hem de accedir a la seguent URL i posar el teu compte
+https://&amp;ldquo;la-teva-ip-sense-cometes&amp;rdquo;/webmail 2)Hem de accedir a Compose i s&amp;rsquo;ens obrirá un cuadrat on podem enviar el missatge amb un assumpte, en el meu cas, l&amp;rsquo;envien un correu al professor joan Després donen click a send i automaticament s&amp;rsquo;enviará, si vols accedir a l&amp;rsquo;altre compte has de fer el mateix però posant el correu del destinatari</description>
+      </item>
+    
+      <item>
+        <title>POSAR CERTIFICAT AL NOSTRE SERVIDOR</title>
+        <link>https://jerry042.github.io/blog.github.io/post/posar-certificat-al-sererver/</link>
+        <pubDate>Wed, 03 Mar 2021 16:11:43 +0100</pubDate>
+        
+        <guid>https://jerry042.github.io/blog.github.io/post/posar-certificat-al-sererver/</guid>
+        <description>El nostre servidor es per https, aixo vol dir que la conexció es més segura de la normal, si volem posar-li un certificat al nostre servidor perque no posi que es insegura, ho podem fer d&amp;rsquo;aquesta manera
+1)Primer de tot hem de instalar el brew, per poder instalar el mkcert, que sera el que generi el nostre certificat.
+/bin/bash -c &amp;ldquo;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&amp;quot; 2)Una vegada instalat al final ens donen una serie d&amp;rsquo;instruccións i executent aquestes comandes</description>
+      </item>
+    
+  </channel>
+</rss>

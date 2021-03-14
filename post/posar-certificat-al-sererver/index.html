@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en" data-mode="light">
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Hugo 0.68.3">
+<meta name="theme" content="Color Your World -- gitlab.com/rmaguiar/hugo-theme-color-your-world">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<title>POSAR CERTIFICAT AL NOSTRE SERVIDOR</title>
+
+
+
+
+
+
+<meta name="robots" content="index follow">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+
+
+
+  
+    <link rel="canonical" href="https://jerry042.github.io/blog.github.io/post/posar-certificat-al-sererver/">
+  
+
+
+
+
+
+
+
+
+<meta property="og:site_name" content="Com crear el vostre servidor de correus en poste.io">
+<meta property="og:title" content="POSAR CERTIFICAT AL NOSTRE SERVIDOR">
+
+  <meta property="og:url" content="https://jerry042.github.io/blog.github.io/post/posar-certificat-al-sererver/">
+
+
+
+
+
+
+
+
+  <meta property="og:type" content="article">
+  
+  
+    <meta property="article:published_time" content="2021-03-03">
+    <meta property="article:modified_time" content="2021-03-03">
+    <meta property="og:updated_time" content="2021-03-03">
+  
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="theme-color" content="#222">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebSite",
+        "@id": "https:\/\/jerry042.github.io\/blog.github.io\/"
+      },
+      "headline": "POSAR CERTIFICAT AL NOSTRE SERVIDOR",
+      "description": "",
+      
+      "url": "https:\/\/jerry042.github.io\/blog.github.io\/post\/posar-certificat-al-sererver\/",
+      "inLanguage": "en",
+      "datePublished": "2021-03-03",
+      "dateModified": "2021-03-03",
+      "wordCount" : "413",
+      "publisher": {
+        "@type": "Person",
+        "name": ""
+      },
+      "author": {
+        "@type": "Person",
+        "name": "",
+        
+        
+      }
+    }
+  </script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/blog.github.io/css/main.min.css">
+
+
+
+<noscript>
+
+  
+  
+
+  
+    <meta name="theme-color" content="#dd587c" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#225670" media="(prefers-color-scheme: light)">
+  
+
+  <style>
+  
+    html {
+      --accent: #225670;
+    }
+  
+    .req-js {
+      display: none;
+    }
+    
+  </style>
+  
+</noscript>
+
+
+
+
+
+
+  <link rel="preload" href="/blog.github.io/fonts/open-sans-v17-latin-700.woff" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/blog.github.io/fonts/open-sans-v17-latin-700.woff2" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/blog.github.io/fonts/open-sans-v17-latin-italic.woff" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/blog.github.io/fonts/open-sans-v17-latin-italic.woff2" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/blog.github.io/fonts/open-sans-v17-latin-regular.woff" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/blog.github.io/fonts/open-sans-v17-latin-regular.woff2" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/blog.github.io/fonts/oswald-v29-latin-700.woff" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/blog.github.io/fonts/oswald-v29-latin-700.woff2" as="font" crossorigin="anonymous">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    
+      'use strict';
+
+// Get default accent colors
+
+
+
+// Get CSS transition
+
+
+// =================================================
+// Mode switcher + Custom accent color
+// Based on: https://gist.github.com/regpaq/04c67e8aceecbf0fd819945835412d1f
+// =================================================
+
+
+  // New prefers-color-scheme media query to detect OS light/dark mode setting
+  const PREFERS_LIGHT = window.matchMedia('(prefers-color-scheme: light)');
+  const PREFERS_DARK = window.matchMedia('(prefers-color-scheme: dark)');
+
+
+const ROOT = document.documentElement;
+
+const SHEET = document.documentElement.style;
+const META_THEME_COLOR = document.querySelector('meta[name=theme-color]');
+
+// Set the dark
+function setDark() {
+  ROOT.dataset.mode = 'dark'
+};
+
+// Set the light
+function setLight() {
+  ROOT.dataset.mode = 'light'
+};
+
+// Initialization triggers light/dark mode based on prior preference, then OS setting
+// And yes, I know 'true' here is a string
+if(localStorage.getItem('isDark') == 'true') {
+  setDark()
+} else if(localStorage.getItem('isDark') == 'false') {
+  setLight()
+
+  
+    } else if(PREFERS_DARK.matches) {
+      setDark()
+    } else if(PREFERS_LIGHT.matches) {
+      setLight()
+  
+
+};
+
+
+
+
+// TODO
+// Maybe I should rethink this ...
+function getAccent() {
+  if (ROOT.dataset.mode === 'dark') {
+  
+    if (localStorage.getItem('darkAccent') === null) {
+      
+      
+      
+      var currentAccent = "#dd587c"
+    } else {
+    
+      var currentAccent = localStorage.getItem('darkAccent')
+      
+      
+      
+    }
+  } else if (ROOT.dataset.mode === 'light') {
+
+    if (localStorage.getItem('lightAccent') === null) {
+  
+      
+      
+
+      var currentAccent = "#225670"
+    } else {
+      var currentAccent = localStorage.getItem('lightAccent')
+      
+      
+      
+    }
+  };
+  
+  return currentAccent
+};
+
+var activeAccent = getAccent();
+
+// Set the active accent color for these right after setting mode color
+// Should mitigate any flickering
+SHEET.setProperty('--accent', activeAccent);
+
+// Also meta-theme cuz, why not
+META_THEME_COLOR.setAttribute('content', activeAccent);
+
+
+function updateAccent() {
+  var activeAccent = getAccent();
+
+  SHEET.setProperty('--accent', activeAccent);
+  PALETTE.value = activeAccent;
+  META_THEME_COLOR.setAttribute('content', activeAccent);
+};
+
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  // Update the color picker with the active accent color 
+  PALETTE.value = activeAccent;
+
+  // Smooth transition, only when changing modes (and not loading pages)
+  function smoothTransition() {
+    document.body.style.transition 
+    = document.querySelector('header').style.transition
+    = document.querySelector('footer').style.transition
+    = 'background-color .3s ease, color .3s ease'
+  };
+  
+  // Give the user a choice
+  function userModeChange() {
+  
+    smoothTransition();
+
+    if (ROOT.dataset.mode == 'light') {
+      setDark();
+      localStorage.setItem('isDark', 'true')
+
+      
+      
+    } else {
+      setLight();
+      localStorage.setItem('isDark', 'false')
+      
+      
+      
+    };
+    
+    updateAccent()
+  };
+
+  
+  // TEST
+  // Keyboard shortcut for mode change, here for testing purposes only
+  // CTRL + ALT + M
+  
+
+
+  
+  
+    // Runs when OS changes light/dark mode. Changes only if you were on default
+    // color state (light on light mode, dark on dark mode).
+    function OSModeChange() {
+    
+      smoothTransition();
+      
+      if (PREFERS_LIGHT.matches) {
+        setLight();
+        localStorage.setItem('isDark', 'false')
+
+        
+        
+      } else if (PREFERS_DARK.matches) {
+        setDark();
+        localStorage.setItem('isDark', 'true')
+        
+        
+      };
+      
+      updateAccent()
+    };
+
+    // Listeners for when you change OS setting for light/dark mode
+    PREFERS_LIGHT.addListener(OSModeChange);
+    PREFERS_DARK.addListener(OSModeChange);
+  
+  
+  
+  // Mode change button
+  document.querySelector('footer button')
+    .addEventListener('click', userModeChange)
+})
+
+    
+  </script>
+
+
+
+  </head>
+
+  <body>
+
+    <header>
+      
+
+  <a href="/blog.github.io">Com crear el vostre servidor de correus en poste.io</a>
+
+
+
+
+
+    </header>
+
+    <div class="filler">
+      
+
+  <main>
+    <article>
+      <header>
+        
+        <h1>POSAR CERTIFICAT AL NOSTRE SERVIDOR</h1>
+
+        
+          <p>
+            
+              Published on <time datetime="2021-03-03">2021-03-03</time>
+            
+          </p>
+        
+        
+        
+        
+      </header>
+    
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>El nostre servidor es per https, aixo vol dir que la conexció es més segura de la normal, si volem posar-li un certificat al nostre servidor perque no posi que es insegura, ho podem fer d&rsquo;aquesta manera</p>
+<p>1)Primer de tot hem de instalar el brew, per poder instalar el mkcert, que sera el que generi el nostre certificat.</p>
+<p><em><strong>/bin/bash -c &ldquo;$(curl -fsSL <a href="https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)%22">https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</a></strong></em>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="https://i.imgur.com/FZkgKHH.png"
+      
+    />
+
+  
+
+</p>
+<p>2)Una vegada instalat al final ens donen una serie d&rsquo;instruccións i executent aquestes comandes</p>
+<p><em><strong>echo &lsquo;eval &ldquo;$(/home/user1/.linuxbrew/bin/brew shellenv)&quot;&rsquo; &raquo; /home/user1/.profile</strong></em></p>
+<p><em><strong>echo eval &ldquo;$(home/user1/.linuxbrew/bin/brew shellenv)&quot;</strong></em>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="https://i.imgur.com/2kHRbd2.png"
+      
+    />
+
+  
+
+</p>
+<p>3)Després anem a instalar el mkcert</p>
+<p><em><strong>brew install mkcert</strong></em>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="https://i.imgur.com/RopM1f3.png"
+      
+    />
+
+  
+
+</p>
+<p>4)Execuetent la seguent comanda per instalar els certificats locals</p>
+<p><em><strong>mkcert -install</strong></em></p>
+<p>A lo millor et dona un error i no et deixa executar aquesta comanda, pots desinstalar el mkcert i tornar a instalar-lo amb la comanda</p>
+<p><em><strong>mkcert -uninstall</strong></em></p>
+<p>A lo millor tampoc et deixa desinstalar-lo d&rsquo;aquesta manera i et dona un error com aquest
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="https://i.imgur.com/Vm90BND.png"
+      
+    />
+
+  
+
+</p>
+<p>Pots fer la comanda que et demana i solucionaries un problema, despres podries tornar a desinstalar el mkcert amb la darrera comanda, si no et deixa pots provar a desinstalar-lo amb la seguent comanda si l&rsquo;instalat amb hugo.</p>
+<p><em><strong>brew reinstall mkcert</strong></em></p>
+<p>Tornes a fer la comanda</p>
+<p><em><strong>mkcert -install</strong></em></p>
+<p>Si tens el mateix error que jo, pots provar a executar aquesta comanda</p>
+<p><em><strong>sudo update-ca-certificates</strong></em>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="https://i.imgur.com/MH86VHj.png"
+      
+    />
+
+  
+
+</p>
+<p>SI ALGUNA COMANDA ET DONA ERROR, ABANS DE SEGUIR TOTS EL PASOS, PROVA A POSAR <em><strong>sudo</strong></em> DAVANT DE TOT.</p>
+<p>5)Si tot a anat bé pots veure dos certificat en la carpeta on has executat la comanda.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="https://i.imgur.com/yBk6t40.png"
+      
+    />
+
+  
+
+</p>
+<p>6)Si vols que el teu server estigui per nombre i no per ip pots anar el /etc i edites l&rsquo;arxius hosts</p>
+<p><em><strong>vi /etc/hosts</strong></em></p>
+<p>Estara la ip del de la maquina i poses la URL que vols
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="https://i.imgur.com/rTadChM.png"
+      
+    />
+
+  
+
+</p>
+<p>7)Vas al teu servidor i entras amb l&rsquo;usuari admin</p>
+<p><em><strong><a href="https://server.fom.edu/admin">https://server.fom.edu/admin</a></strong></em></p>
+<p>8)Vas a System settings i despres a TLS certificate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="https://i.imgur.com/Ww9Csq1.png"
+      
+    />
+
+  
+
+</p>
+<p>9)Quan ja estas tindre, poses els certificats d&rsquo;aquesta manera perque ho accepti
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="https://i.imgur.com/I2ILcCC.png"
+      
+    />
+
+  
+
+</p>
+<p>10)No et donará cap missatge de que esta bé, però si has posar equivocadament els certificat t&rsquo;ho notificará</p>
+<p>11)Perque els canvis funcionin, has d&rsquo;anar a la teva maquina, en el meu cas intf, i reiniciar el teu servidor</p>
+<p><em><strong>docker stop volum_server</strong></em>
+<em><strong>docker start volum_server</strong></em>
+o
+<em><strong>docker restart volum_server</strong></em>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="https://i.imgur.com/mczw0ML.png"
+      
+    />
+
+  
+
+</p>
+<p>NOTA: el volum_server es el nombre del meu contenidor, pots saber quin es el nombre del teu contenidor amb la comanda docker ps.</p>
+<p>12)Quan ja tens reiniciat el servei, pots anar al cercador una altre vegada i t&rsquo;haura de posar que tens un certificat i la pagina es segura.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="https://i.imgur.com/hcCCvpd.png"
+      
+    />
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="https://i.imgur.com/VIuEFQG.png"
+      
+    />
+
+  
+
+</p>
+
+
+
+    </article>
+  </main>
+
+
+    </div>
+    
+    <footer>
+      
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="req-js">
+  <button class="outline-dashed" title="Change to light/dark mode."><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><use xlink:href="#adjust"/></svg></button><input class="outline-dashed" type="color" list="presets" value="#225670" title="Change accent color." aria-label="Change accent color."><datalist id="presets"><option value="#225670"><option value="#dd587c"></datalist>
+</section>
+
+
+
+
+
+    </footer>
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true">
+      <symbol viewBox="0 0 512 512" id="adjust">
+        <path d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"/>
+      </symbol>
+      
+      
+      
+      
+  
+<symbol viewBox="0 0 448 512" id="hashtag">
+  <path d="M440.667 182.109l7.143-40c1.313-7.355-4.342-14.109-11.813-14.109h-74.81l14.623-81.891C377.123 38.754 371.468 32 363.997 32h-40.632a12 12 0 0 0-11.813 9.891L296.175 128H197.54l14.623-81.891C213.477 38.754 207.822 32 200.35 32h-40.632a12 12 0 0 0-11.813 9.891L132.528 128H53.432a12 12 0 0 0-11.813 9.891l-7.143 40C33.163 185.246 38.818 192 46.289 192h74.81L98.242 320H19.146a12 12 0 0 0-11.813 9.891l-7.143 40C-1.123 377.246 4.532 384 12.003 384h74.81L72.19 465.891C70.877 473.246 76.532 480 84.003 480h40.632a12 12 0 0 0 11.813-9.891L151.826 384h98.634l-14.623 81.891C234.523 473.246 240.178 480 247.65 480h40.632a12 12 0 0 0 11.813-9.891L315.472 384h79.096a12 12 0 0 0 11.813-9.891l7.143-40c1.313-7.355-4.342-14.109-11.813-14.109h-74.81l22.857-128h79.096a12 12 0 0 0 11.813-9.891zM261.889 320h-98.634l22.857-128h98.634l-22.857 128z"/>
+</symbol>
+
+
+
+      
+      
+      
+    </svg>
+
+    
+    
+    
+
+      <script>
+        
+          'use strict';const PALETTE=document.querySelector('footer input');PALETTE.onchange=function(){const PICK=PALETTE.value;SHEET.setProperty('--accent',PICK);if(ROOT.dataset.mode==='light'){localStorage.setItem('lightAccent',PICK)}else{localStorage.setItem('darkAccent',PICK)};updateAccent()};
+        
+      </script>
+
+    
+    
+    
+    
+
+  </body>
+</html>
